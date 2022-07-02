@@ -7,19 +7,19 @@ on:
   workflow_dispatch:
 
 env:
-  LOCATION: AustraliaEast
-  STORAGE_CONFIGURATION: Premium_100GB
+  LOCATION: WestEurope
+  STORAGE_CONFIGURATION: Standard_100GB
   # The type of Azure service to deploy the resources to.
   # ACI = Azure Container Instance
   # AAS = Azure App Service (Web App)
-  TYPE: 'AAS'
+  TYPE: "ACI"
 
   # Only required if TYPE is ACI
   CONTAINER_CONFIGURATION: Small
 
-  # Only required if TYPE is AAS
-  APPSERVICEPLAN_CONFIGURATION: P1V2
-  DEPLOY_DDBPROXY: true
+  # # Only required if TYPE is AAS
+  # APPSERVICEPLAN_CONFIGURATION: P1V2
+  # DEPLOY_DDBPROXY: true
 
 jobs:
   deploy-azure-resources:
@@ -83,4 +83,3 @@ jobs:
                            storageConfiguration="$STORAGE_CONFIGURATION" \
                            appServicePlanConfiguration="$APPSERVICEPLAN_CONFIGURATION" \
                            deployDdbProxy="$DEPLOY_DDBPROXY"
-
