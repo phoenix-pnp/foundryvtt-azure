@@ -14,12 +14,12 @@ env:
   # AAS = Azure App Service (Web App)
   TYPE: "AAS"
 
-  # Only required if TYPE is ACI
-  CONTAINER_CONFIGURATION: Small
+  # # Only required if TYPE is ACI
+  # CONTAINER_CONFIGURATION: Small
 
   # Only required if TYPE is AAS
   APPSERVICEPLAN_CONFIGURATION: B1
-  DEPLOY_DDBPROXY: true
+  DEPLOY_DDBPROXY: false
 
 jobs:
   deploy-azure-resources:
